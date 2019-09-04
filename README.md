@@ -18,19 +18,19 @@ php artisan migrate
 /oauth/register
 Example request
 ```
-    {
-        "name": "John Doe",
-        "email": "JohnDoe@mail.com",
-        "password": "password",
-        "password_confirmation": "password"
-    }
+{
+    "name": "John Doe",
+    "email": "JohnDoe@mail.com",
+    "password": "password",
+    "password_confirmation": "password"
+}
 ```
 
 /oauth/login
 Example request
 ```
-    {
-        "email": "JohnDoe@mail.com",
-        "password": "password"
-    }
+{
+    "email": "JohnDoe@mail.com",
+    "password": "password"
+}
 ```
