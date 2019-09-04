@@ -1,6 +1,6 @@
 # Headless-Laravel
 
-Headless Laravel is meant to be a back-end for a front-end application. Our aspect is to focus on user authentication and making it easy to simply setup a authentication system.
+Headless Laravel is just the defdault Laravel framework combined with the Passport package. This togheter is responsible for a flaweless rest-api application. All the good stuff from laravel and some custom responses are comming toghether to give you the best experience.
 
 ## Installation
 
@@ -11,4 +11,26 @@ git clone git@github.com:Jeffrey-H/Headless-Laravel.git
 composer install
 php artisan passport:install
 php artisan migrate
+```
+
+## Default Authentication url's
+
+/oauth/register
+Example request
+```
+    {
+        "name": "John Doe",
+        "email": "JohnDoe@mail.com",
+        "password": "password",
+        "password_confirmation": "password"
+    }
+```
+
+/oauth/login
+Example request
+```
+    {
+        "email": "JohnDoe@mail.com",
+        "password": "password"
+    }
 ```
