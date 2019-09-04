@@ -37,23 +37,23 @@ class RouteServiceProvider extends ServiceProvider
     {
         $this->mapApiRoutes();
 
-        $this->mapWebRoutes();
+        $this->mapOauthRoutes();
 
         //
     }
 
     /**
-     * Define the "web" routes for the application.
+     * Define the "oauth" routes for the application.
      *
-     * These routes all receive session state, CSRF protection, etc.
+     * These routes are typically stateless.
      *
      * @return void
      */
-    protected function mapWebRoutes()
+    protected function mapOauthRoutes()
     {
-        Route::middleware('web')
-             ->namespace($this->namespace)
-             ->group(base_path('routes/web.php'));
+        Route::prefix('oauth')
+            ->namespace($this->namespace)
+            ->group(base_path('routes/oauth.php'));
     }
 
     /**
