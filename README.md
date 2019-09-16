@@ -1,6 +1,6 @@
 # Headless-Laravel
 
-Headless Laravel is just the defdault Laravel framework combined with the Passport package. This togheter is responsible for a flaweless rest-api application. All the good stuff from laravel and some custom responses are comming toghether to give you the best experience.
+Headless Laravel is the default Laravel framework combined with the Passport package. This togheter will be responsible for a flawless Rest-API application. All the good features of laravel and custom responses are coming together to give you the best possible experience.
 
 ## Installation
 
