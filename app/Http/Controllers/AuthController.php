@@ -47,9 +47,9 @@ class AuthController extends
         }
 
         $credentials = request(['email', 'password']);
-        if (!Auth::attempt($credentials))
+        if (!Auth::guard('web')->attempt($credentials))
             return response()->json(['status' => '401', 'message' => 'Unauthorized'], 401);
-        $user = $request->user();
+        $user = Auth::guard('web')->user();
         $tokenResult = $user->createToken('Personal Access Token');
         $token = $tokenResult->token;
 

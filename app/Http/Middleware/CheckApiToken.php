@@ -6,24 +6,20 @@ use App\Models\User;
 use Closure;
 use Illuminate\Support\Facades\Auth;
 
-class CheckApiToken
-{
+class CheckApiToken {
     /**
      * Handle an incoming request.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \Closure  $next
+     * @param \Illuminate\Http\Request $request
+     * @param \Closure $next
      * @return mixed
      */
-    public function handle($request, Closure $next)
-    {
-        if(!empty(trim($request->input('api_token')))){
+    public function handle($request, Closure $next) {
 
-            $is_exists = User::where('id' , Auth::guard('api')->id())->exists();
-            if($is_exists){
-                return $next($request);
-            }
+        if (User::where('id', Auth::guard('api')->user()->id)->exists()) {
+            return $next($request);
         }
+
         return response()->json(['message' => 'Not authenticated'], 401);
     }
 }
