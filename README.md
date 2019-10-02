@@ -13,7 +13,7 @@ php artisan passport:install
 php artisan migrate
 ```
 
-## Default Authentication url's
+## Default Authentication URLs
 
 /oauth/register
 Example request
