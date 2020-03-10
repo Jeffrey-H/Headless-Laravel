@@ -16,7 +16,7 @@ class CheckApiToken {
      */
     public function handle($request, Closure $next) {
 
-        if (User::where('id', Auth::guard('api')->user()->id)->exists()) {
+        if (Auth::guard('api')->user() !== null) {
             return $next($request);
         }
 
